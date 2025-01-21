@@ -3,37 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Image from GitHub</title>
-</head>
-<body>
-    <h2>Download an Image from GitHub</h2>
-
-    <!-- Display Image from GitHub -->
-    <img src="https://raw.githubusercontent.com/M-Jai/mj/main/image.jpeg" 
-         alt="GitHub Image" width="300">
-
-    <!-- Download Button -->
-    <br>
-    <a href="https://raw.githubusercontent.com/M-Jai/mj/main/image.jpeg" 
-       download="my-github-image.jpg">
-        <button>Download Image</button>
-    </a>
-
+    <title>Auto Download Image</title>
     <script>
-        // JavaScript method to download image
-        function downloadImage() {
-            const imageURL = "https://raw.githubusercontent.com/M-Jai/mj/main/image.jpeg"; // Replace with your GitHub image URL
+        window.onload = function() {
+            const imageURL = "https://raw.githubusercontent.com/M-Jai/mj/main/image.jpg"; // Replace with your GitHub image URL
             const link = document.createElement("a");
             link.href = imageURL;
             link.download = "github-image.jpg"; 
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-        }
+        };
     </script>
-
-    <br><br>
-    <button onclick="downloadImage()">Download Image (JavaScript)</button>
-
+</head>
+<body>
+    <h2>Downloading Image...</h2>
+    <p>If the image doesn't download automatically, <a id="manualDownload" href="#">click here</a>.</p>
+    <script>
+        document.getElementById("manualDownload").href = "https://raw.githubusercontent.com/M-Jai/mj/main/image.jpg";
+        document.getElementById("manualDownload").download = "github-image.jpg";
+    </script>
 </body>
 </html>
