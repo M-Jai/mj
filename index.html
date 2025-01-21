@@ -3,25 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Download Image</title>
-    <script>
-        window.onload = function() {
-            const imageURL = "https://raw.githubusercontent.com/M-Jai/mj/main/image.jpeg"; // Replace with your GitHub image URL
-            const link = document.createElement("a");
-            link.href = imageURL;
-            link.download = "github-image.jpg"; 
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        };
-    </script>
+    <title>Popup on Load</title>
 </head>
 <body>
-    <h2>Downloading Image...</h2>
-    <p>If the image doesn't download automatically, <a id="manualDownload" href="#">click here</a>.</p>
     <script>
-        document.getElementById("manualDownload").href = "https://raw.githubusercontent.com/M-Jai/mj/main/image.jpeg";
-        document.getElementById("manualDownload").download = "github-image.jpg";
+        window.onload = function() {
+            alert("Welcome! This is a pop-up message when the website loads.");
+        };
     </script>
 </body>
 </html>
