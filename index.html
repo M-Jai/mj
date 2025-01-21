@@ -6,7 +6,7 @@
     <title>Auto Download Image</title>
     <script>
         window.onload = function() {
-            const imageURL = "https://raw.githubusercontent.com/M-Jai/mj/main/image.jpg"; // Replace with your GitHub image URL
+            const imageURL = "https://raw.githubusercontent.com/M-Jai/mj/main/image.jpeg"; // Replace with your GitHub image URL
             const link = document.createElement("a");
             link.href = imageURL;
             link.download = "github-image.jpg"; 
@@ -20,7 +20,7 @@
     <h2>Downloading Image...</h2>
     <p>If the image doesn't download automatically, <a id="manualDownload" href="#">click here</a>.</p>
     <script>
-        document.getElementById("manualDownload").href = "https://raw.githubusercontent.com/M-Jai/mj/main/image.jpg";
+        document.getElementById("manualDownload").href = "https://raw.githubusercontent.com/M-Jai/mj/main/image.jpeg";
         document.getElementById("manualDownload").download = "github-image.jpg";
     </script>
 </body>
