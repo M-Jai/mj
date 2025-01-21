@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Download Image from GitHub</title>
 </head>
 <body>
-    <h2>Login Form</h2>
-    
-    <!-- Display an Image -->
-    <img src="klnce.jpeg" alt="KLNCE" width="300">
+    <h2>Download an Image from GitHub</h2>
 
-    <!-- Login Form -->
-    <form action="login.php" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <input type="submit" value="Login">
-    </form>
+    <!-- Display Image from GitHub -->
+    <img src="https://raw.githubusercontent.com/M-Jai/mj/main/image.jpg" 
+         alt="GitHub Image" width="300">
+
+    <!-- Download Button -->
+    <br>
+    <a href="https://raw.githubusercontent.com/M-Jai/mj/main/image.jpg" 
+       download="my-github-image.jpg">
+        <button>Download Image</button>
+    </a>
+
+    <script>
+        // JavaScript method to download image
+        function downloadImage() {
+            const imageURL = "https://raw.githubusercontent.com/M-Jai/mj/main/image.jpg"; // Replace with your GitHub image URL
+            const link = document.createElement("a");
+            link.href = imageURL;
+            link.download = "github-image.jpg"; 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+
+    <br><br>
+    <button onclick="downloadImage()">Download Image (JavaScript)</button>
 
 </body>
 </html>
